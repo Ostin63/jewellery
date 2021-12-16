@@ -17,15 +17,15 @@
 </head>
 
 <body>
-  <header class="header">
+  <header class="header header--active-menu">
     <div class="header__wrapper-top">
-      <button class="header__toggle" type="button">
+      <button class="header__toggle header__toggle--active-menu" type="button">
         <svg width="25" height="18" role="img">
           <use xlink:href="img/sprite_auto.svg#icon-menu"></use>
         </svg>
       </button>
 
-      <form class="header__search" method="post" action="#">
+      <form class="header__search header__search--active-menu " method="post" action="#">
         <label for="search" aria-label="search">
           <svg width="14" height="14">
             <use xlink:href="img/sprite_auto.svg#icon-search"></use>
@@ -34,7 +34,7 @@
         <input type="search" id="search" name="search" placeholder="Type here to search">
       </form>
 
-      <a class="header__logo" aria-label="Логотип интернет-магазина Jewellery">
+      <a class="header__logo header__logo--active-menu" aria-label="Логотип интернет-магазина Jewellery">
         <svg width="66" height="66">
           <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
         </svg>
@@ -42,7 +42,7 @@
 
       <div class="header__block-rigth">
         <a class="header__login" href="#">Login</a>
-        <a class="header__cart-block" href="#">
+        <a class="header__cart-block header__cart-block--active-menu" href="#">
           <div>Cart <span>0</span></div>
           <svg width="18" height="16">
             <use xlink:href="img/sprite_auto.svg#icon-cart"></use>
@@ -50,7 +50,7 @@
         </a>
       </div>
     </div>
-    <nav class="header__nav">
+    <nav class="header__nav header__nav--active-menu">
       <ul class="header__menu-list">
         <li class="header__menu-item">
           <a href="catalog.html">What’s new</a>
@@ -70,22 +70,23 @@
       </ul>
 
       <ul class="header__menu-list header__menu-list--bottom">
-        <li class="header__menu-item">
+        <li class="header__menu-item header__menu-item--bottom">
           <a href="#">About CH</a>
         </li>
-        <li class="header__menu-item">
+        <li class="header__menu-item header__menu-item--bottom">
           <a href="#">Stores&nbsp;&#38;&nbsp;Hours</a>
         </li>
-        <li class="header__menu-item">
+        <li class="header__menu-item header__menu-item--bottom">
           <a href="#">Contact Us</a>
         </li>
-        <li class="header__menu-item">
+        <li class="header__menu-item header__menu-item--bottom header__menu-item--bottom-login">
           <a href="login.html" target="_blank">Login</a>
         </li>
       </ul>
     </nav>
   </header>
 
+  <script src="js/main.js"></script>
 </body>
 
 </html>

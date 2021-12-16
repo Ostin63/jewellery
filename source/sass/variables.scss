@@ -6,6 +6,7 @@ $font-poppins: "poppins", "Tahoma", sans-serif;
 $font-cormorant: "cormorant-garamond", "Palatino Linotype", serif;
 
 $white: #ffffff;
+$white-15: rgba(#ffffff, 0.15);
 $white-75: rgba(#ffffff, 0.75);
 $black: #000000;
 $black-dark: #1d1613;
@@ -21,6 +22,7 @@ $gray-ligth-24: rgba(#e2ddd7, 0.24);
 $border-brown: 1px solid $brown;
 $border-dark: 1px solid $black-dark;
 $border-line: 1px solid $gray-ligth;
+$border-white: 1px solid $white;
 
 $shadow-gray-ligth: 0 5px 32px $gray-ligth-24;
 $shadow-gray: 0 5px 32px $gray-24;
