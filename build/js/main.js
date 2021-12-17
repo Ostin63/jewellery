@@ -1,3 +1,5 @@
+/* eslint-disable no-new */
+/* eslint-disable no-undef */
 'use strict';
 (function () {
   var body = document.querySelector('body');
@@ -17,7 +19,43 @@
     headerNav.classList.toggle('header__nav--active-menu');
   }
 
-  onToggleMenu();
+  new Swiper('.novelty__container', {
+    loop: true,
+    slidesPerGroup: 2,
+    slidesPerView: 2,
+    centeredSlides: false,
+    spaceBetween: 30,
+    centeredSlidesBounds: true,
 
+    pagination: {
+      el: '.novelty__slider-pagination',
+      clickable: 'true',
+      renderBullet: function (index, className) {
+        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      },
+    },
+
+    navigation: {
+      nextEl: '.novelty__slider-button--next',
+      prevEl: '.novelty__slider-button--prev',
+    },
+
+    breakpoints: {
+      767: {
+        slidesPerView: 2,
+        slidesPerGroup: 2,
+      },
+      1023: {
+        slidesPerView: 3,
+        slidesPerGroup: 3,
+      },
+      1169: {
+        slidesPerView: 4,
+        slidesPerGroup: 4,
+      },
+    },
+  });
+
+  onToggleMenu();
   buttonMenu.addEventListener('click', onToggleMenu);
 })();
