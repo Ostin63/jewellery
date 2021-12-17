@@ -1,0 +1,88 @@
+.promo {
+  position: relative;
+  min-height: 463px;
+  background-image: url("../img/promo-bg.jpg");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-color: $brown;
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("../img/promo-bg@2.jpg");
+
+    @media (max-width: $desktop-width) {
+      background-image: url("../img/promo-bg-768@2.jpg");
+    }
+
+    @media (max-width: $mobile-width) {
+      background-image: url("../img/promo-320-bg@2.jpg");
+    }
+  }
+
+  &::after {
+    position: absolute;
+    width: 100%;
+    min-height: 463px;
+    top: 0;
+    content: "";
+    display: block;
+    background: $brown-70;
+  }
+
+  @media (max-width: $desktop-width) {
+    background-image: url("../img/promo-bg-768.jpg");
+  }
+
+  @media (max-width: $mobile-width) {
+    background-image: url("../img/promo-320-bg.jpg");
+  }
+}
+
+.promo__wrapper {
+  position: relative;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding-top: 180px;
+  font-family: $font-cormorant;
+  text-align: center;
+  color: $white;
+  z-index: 10;
+
+  @media (max-width: $tablet-width) {
+    padding-top: 189px;
+  }
+
+  h2 {
+    margin: 0;
+    font-weight: bold;
+    font-size: 45px;
+    line-height: 130%;
+    letter-spacing: 0.03em;
+
+    @media (max-width: $desktop-width) {
+      margin-left: -18px;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin-left: 0;
+      font-size: 38px;
+    }
+  }
+
+  p {
+    margin: -5px 0 0;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 38px;
+    line-height: 130%;
+
+    @media (max-width: $desktop-width) {
+      margin-left: -18px;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin-left: 0;
+      font-size: 34px;
+    }
+  }
+}

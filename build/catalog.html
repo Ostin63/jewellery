@@ -34,7 +34,7 @@
         <input type="search" id="search" name="search" placeholder="Type here to search">
       </form>
 
-      <a class="header__logo header__logo--active-menu" aria-label="Логотип интернет-магазина Jewellery">
+      <a class="header__logo header__logo--active-menu" aria-label="Логотип интернет-магазина Jewellery" href="index.html">
         <svg width="66" height="66">
           <use xlink:href="img/sprite_auto.svg#icon-logo"></use>
         </svg>
@@ -86,84 +86,79 @@
     </nav>
   </header>
 
-  <main class="main">
-    <h1 class="visually-hidden">Shop online jewelry store.</h1>
-    <section class="promo">
-      <div class="promo__wrapper">
-        <h2>PERFECTION</h2>
-        <p>made to be yours</p>
-      </div>
-    </section>
-  </main>
-
-<footer class="footer">
-  <div class="footer__wrapper">
-    <div class="footer__signup">
-      <h2>The good stuff in your inbox</h2>
-      <p>News and updates from CH. No spam, we promise.</p>
-      <form class="footer__signup-form" action="#" method="POST">
-        <label class="visually-hidden" for="mail">mail input field</label>
+  <footer class="footer">
+    <div class="footer__wrapper">
+      <div class="footer__signup">
+        <h2>The good stuff in your inbox</h2>
+        <p>News and updates from CH. No spam, we promise.</p>
+        <form class="footer__signup-form" action="#" method="POST">
+          <label class="visually-hidden" for="mail">mail input field</label>
           <input type="email" name="email" id="mail" placeholder="Your E-mail" required="">
-        <button class="footer__signup-submit" type="submit">Sign&nbsp;Up</button>
-      </form>
-    </div>
+          <button class="footer__signup-submit" type="submit">
+            Sign&nbsp;Up
+            <svg width="37" height="17" role="img">
+              <use xlink:href="img/sprite_auto.svg#icon-arrow-right"></use>
+            </svg>
+          </button>
+        </form>
+      </div>
 
-    <div class="footer__terms">
-      <ul class="footer__terms-list">
-        <li class="footer__terms-item">
-          <a href="#">Ordering&nbsp;&#38;&nbsp;Payment</a>
+      <div class="footer__terms">
+        <ul class="footer__terms-list">
+          <li class="footer__terms-item">
+            <a href="#">Ordering&nbsp;&#38;&nbsp;Payment</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Terms&nbsp;&#38;&nbsp;Conditions</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Returns&nbsp;&#38;&nbsp;Exchanges</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Delivery</a>
+          </li>
+        </ul>
+
+        <ul class="footer__terms-list">
+          <li class="footer__terms-item">
+            <a href="#">About CH</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Stores&nbsp;&#38;&nbsp;Hours</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Jobs</a>
+          </li>
+          <li class="footer__terms-item">
+            <a href="#">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+
+      <ul class="footer__socials-list">
+        <li class="footer__socials-item footer__socials-item--facebook">
+          <a href="https://ru-ru.facebook.com">
+            <span>Facebook</span>
+          </a>
         </li>
-        <li class="footer__terms-item">
-          <a href="#">Terms&nbsp;&#38;&nbsp;Conditions</a>
+        <li class="footer__socials-item footer__socials-item--instagram">
+          <a href="https://www.instagram.com/">
+            <span>Instagram</span>
+          </a>
         </li>
-        <li class="footer__terms-item">
-          <a href="#">Returns&nbsp;&#38;&nbsp;Exchanges</a>
+        <li class="footer__socials-item footer__socials-item--pinterest">
+          <a href="https://www.pinterest.com/">
+            <span>Pinterest</span>
+          </a>
         </li>
-        <li class="footer__terms-item">
-          <a href="#">Delivery</a>
+        <li class="footer__socials-item footer__socials-item--twitter">
+          <a href="https://twitter.com/">
+            <span>Twitter</span>
+          </a>
         </li>
       </ul>
-
-      <ul class="footer__terms-list">
-        <li class="footer__terms-item">
-          <a href="#">About CH</a>
-        </li>
-        <li class="footer__terms-item">
-          <a href="#">Stores&nbsp;&#38;&nbsp;Hours</a>
-        </li>
-        <li class="footer__terms-item">
-          <a href="#">Jobs</a>
-        </li>
-        <li class="footer__terms-item">
-          <a href="#">Contact Us</a>
-        </li>
-      </ul>
     </div>
-
-    <ul class="footer__socials-list">
-      <li class="footer__socials-item footer__socials-item--facebook">
-        <a href="https://ru-ru.facebook.com">
-          <span>Facebook</span>
-        </a>
-      </li>
-      <li class="footer__socials-item footer__socials-item--instagram">
-        <a href="https://www.instagram.com/">
-          <span>Instagram</span>
-        </a>
-      </li>
-      <li class="footer__socials-item footer__socials-item--pinterest">
-        <a href="https://www.pinterest.com/">
-          <span>Pinterest</span>
-        </a>
-      </li>
-      <li class="footer__socials-item footer__socials-item--twitter">
-        <a href="https://twitter.com/">
-          <span>Twitter</span>
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
+  </footer>
 
   <script src="js/main.js"></script>
 </body>

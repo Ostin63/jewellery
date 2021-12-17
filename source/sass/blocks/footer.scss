@@ -108,11 +108,15 @@
   background: transparent;
   cursor: pointer;
 
-  svg {
+  &::after {
     width: 30px;
     height: 11px;
     margin-left: 12px;
-
+    content: "";
+    background-image: url("../img/arrow-right.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
   &:hover,
