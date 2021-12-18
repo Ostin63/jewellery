@@ -61,9 +61,7 @@
   });
 
   totalDotsOut.textContent = noveltyPagination.children.length;
-
   currentDotOut.textContent = document.querySelector('.swiper-pagination-bullet-active').textContent;
-
 
   onToggleMenu();
 
