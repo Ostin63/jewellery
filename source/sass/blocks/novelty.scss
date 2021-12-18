@@ -1,6 +1,14 @@
 .novelty {
   padding: 0 15px;
   background: $white;
+
+  @media (max-width: $desktop-width) {
+    padding: 0 45px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 15px;
+  }
 }
 
 .novelty__wrapper {
@@ -8,22 +16,44 @@
   max-width: 1170px;
   margin: 0 auto;
   padding: 120px 0 60px;
+
+  @media (max-width: $desktop-width) {
+    padding: 70px 0 60px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 60px 0 35px;
+  }
 }
 
 .novelty__top-text {
+  padding-bottom: 58px;
   text-align: center;
 
+  @media (max-width: $desktop-width) {
+    padding-bottom: 50px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 40px;
+  }
+
   h2 {
-    margin: 0 0 30px;
+    margin: 0 0 25px;
     font-family: $font-cormorant;
     font-weight: bold;
     font-size: 34px;
     line-height: 130%;
     color: $black-dark;
+
+    @media (max-width: $desktop-width) {
+      margin: 0 0 19px;
+    }
   }
 
   a {
-    margin-bottom: 60px;
+    display: inline-block;
+    vertical-align: middle;
     text-decoration: none;
     font-family: $font-poppins;
     font-weight: 500;
@@ -31,10 +61,14 @@
     line-height: 130%;
     color: $black-dark;
     border-bottom: $border-brown;
+    outline: none;
+
+    @media (max-width: $desktop-width) {
+      padding-bottom: 4px;
+    }
 
     &:hover,
     &:focus {
-      border-bottom: none;
       outline: $border-brown;
       outline-offset: 4px;
     }
@@ -48,15 +82,54 @@
 .novelty__container {
   position: relative;
   max-width: 1170px;
-  margin-left: -15px;
+  margin: 0 auto;
+  padding-bottom: 54px;
   display: block;
   overflow: hidden;
-  margin: 0 auto;
 }
 
-.novelty__card {
+.novelty__card-link {
+  width: 270px;
+  margin: 0 auto;
   padding-bottom: 20px;
   display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: $font-poppins;
+  color: $black-dark;
+
+  img {
+    width: 270px;
+    height: 284px;
+
+    @media (max-width: $desktop-width) {
+      width: 324px;
+      height: 340px;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 130px;
+      height: 136px;
+    }
+  }
+
+  h3 {
+    margin: 15px 0 6px;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+
+    @media (max-width: $tablet-width) {
+      margin-top: 10px;
+    }
+  }
+
+  p {
+    margin: 0;
+    font-weight: bold;
+    font-size: 14px;
+    line-height: 130%;
+  }
 
   &:hover,
   &:focus {
@@ -67,53 +140,35 @@
   &:active {
     opacity: 0.7;
   }
-}
 
-.novelty__card-link {
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  font-family: $font-poppins;
-  color: $black-dark;
-
-  h3 {
-    margin: 25px 0 15px;
-    font-weight: 500;
-    font-size: 16px;
-    line-height: 130%;
+  @media (max-width: $desktop-width) {
+    width: 324px;
   }
 
-  p {
-    margin: 0;
-    font-weight: bold;
-    font-size: 14px;
-    line-height: 130%;
-  }
-}
-
-.novelty__wrapper-img {
-  width: 270px;
-  height: 264px;
-  display: block;
-  z-index: -1;
-
-  img {
-    width: 270px;
-    height: 264px;
+  @media (max-width: $tablet-width) {
+    width: 130px;
   }
 }
 
 .novelty__slider-pagination {
   position: absolute;
   width: 100%;
-  bottom: 72px;
+  bottom: 62px;
   text-align: center;
+
+  @media (max-width: $desktop-width) {
+    bottom: 70px;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .swiper-pagination-bullet {
   width: 21px;
-  display: inline-block;
   height: 21px;
+  display: inline-block;
   vertical-align: middle;
   font-family: $font-poppins;
   font-weight: 500;
@@ -145,6 +200,14 @@
   left: 0;
   display: flex;
   justify-content: space-between;
+
+  @media (max-width: $desktop-width) {
+    top: 113px;
+  }
+
+  @media (max-width: $tablet-width) {
+    display: none;
+  }
 }
 
 .novelty__slider-button {
@@ -155,6 +218,11 @@
   border: none;
   cursor: pointer;
 
+  @media (max-width: $desktop-width) {
+    width: 36px;
+    height: 15px;
+  }
+
   &::before {
     width: 30px;
     height: 11px;
@@ -164,6 +232,11 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
+
+    @media (max-width: $desktop-width) {
+      width: 36px;
+      height: 15px;
+    }
   }
 
   &--prev {
@@ -181,4 +254,23 @@
   &:active {
     opacity: 0.7;
   }
+}
+
+.novelty__mobile-pagination {
+  display: none;
+
+  @media (max-width: $tablet-width) {
+    position: absolute;
+    width: 100%;
+    bottom: 55px;
+    display: block;
+    text-align: center;
+  }
+}
+
+.novelty__mobile {
+  font-family: $font-poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
 }
