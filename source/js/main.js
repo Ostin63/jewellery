@@ -1,3 +1,4 @@
+/* eslint-disable no-new */
 /* eslint-disable no-undef */
 'use strict';
 (function () {
@@ -10,8 +11,11 @@
   var headerNav = header.querySelector('.header__nav');
   var currentDotOut = body.querySelector('.novelty__mobile--current');
   var totalDotsOut = body.querySelector('.novelty__mobile--total');
+  var noveltySlider = body.querySelector('.novelty__container');
   var noveltyPagination = body.querySelector('.slider-pagination');
   // var activeBulet = document.querySelector('.swiper-pagination-bullet-active');
+  var faqList = body.querySelector('.faq__list');
+  var faqButtons = faqList.querySelectorAll('.faq__item');
 
   function onToggleMenu() {
     header.classList.toggle('header--active-menu');
@@ -22,46 +26,58 @@
     headerNav.classList.toggle('header__nav--active-menu');
   }
 
-  // eslint-disable-next-line no-new
-  new Swiper('.novelty__container', {
-    loop: true,
-    slidesPerGroup: 2,
-    slidesPerView: 2,
-    centeredSlides: false,
-    spaceBetween: 30,
-    centeredSlidesBounds: true,
+  if (noveltySlider) {
+    new Swiper('.novelty__container', {
+      loop: true,
+      slidesPerGroup: 2,
+      slidesPerView: 2,
+      centeredSlides: false,
+      spaceBetween: 30,
+      centeredSlidesBounds: true,
 
-    pagination: {
-      el: '.novelty__slider-pagination',
-      clickable: 'true',
-      renderBullet: function (index, className) {
-        return '<span class="' + className + '">' + (index + 1) + '</span>';
+      pagination: {
+        el: '.novelty__slider-pagination',
+        clickable: 'true',
+        renderBullet: function (index, className) {
+          return '<span class="' + className + '">' + (index + 1) + '</span>';
+        },
       },
-    },
 
-    navigation: {
-      nextEl: '.novelty__slider-button--next',
-      prevEl: '.novelty__slider-button--prev',
-    },
+      navigation: {
+        nextEl: '.novelty__slider-button--next',
+        prevEl: '.novelty__slider-button--prev',
+      },
 
-    breakpoints: {
-      767: {
-        slidesPerView: 2,
-        slidesPerGroup: 2,
+      breakpoints: {
+        767: {
+          slidesPerView: 2,
+          slidesPerGroup: 2,
+        },
+        1023: {
+          slidesPerView: 3,
+          slidesPerGroup: 3,
+        },
+        1169: {
+          slidesPerView: 4,
+          slidesPerGroup: 4,
+        },
       },
-      1023: {
-        slidesPerView: 3,
-        slidesPerGroup: 3,
-      },
-      1169: {
-        slidesPerView: 4,
-        slidesPerGroup: 4,
-      },
-    },
-  });
+    });
 
-  totalDotsOut.textContent = noveltyPagination.children.length;
-  currentDotOut.textContent = document.querySelector('.swiper-pagination-bullet-active').textContent;
+    totalDotsOut.textContent = noveltyPagination.children.length;
+    currentDotOut.textContent = document.querySelector('.swiper-pagination-bullet-active').textContent;
+  }
+
+  if (faqList) {
+    for (var i = 0; i < faqButtons.length; i++) {
+      faqButtons[i].classList.remove('faq__item--active');
+    }
+
+    faqList.addEventListener('click', function (evt) {
+      var faqItem = evt.target.closest('li');
+      faqItem.classList.toggle('faq__item--active');
+    });
+  }
 
   onToggleMenu();
 

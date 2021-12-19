@@ -1,0 +1,41 @@
+.gallery {
+  padding: 30px 15px 130px;
+  background: $white;
+
+  h2 {
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $black;
+
+    span {
+      font-size: 42px;
+    }
+  }
+
+  a {
+    margin: 0 auto;
+    display: inline-block;
+    vertical-align: middle;
+    text-decoration: none;
+    font-family: $font-poppins;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 130%;
+    color: $black-dark;
+    border-bottom: $border-brown;
+  }
+}
+
+.gallery__list {
+  max-width: 1170px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+// .gallery__item {}
+
+// .gallery__block-img {}
