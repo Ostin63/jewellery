@@ -1,0 +1,122 @@
+.faq {
+  padding: 32px 15px 50px;
+  background: $white;
+
+  @media (max-width: $desktop-width) {
+    padding: 10px 45px 50px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 0 15px 50px;
+  }
+
+  h2 {
+    margin: 0 0 47px;
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 130%;
+    text-align: center;
+    letter-spacing: 0.03em;
+    color: $black-dark;
+
+    @media (max-width: $tablet-width) {
+      margin-bottom: 28px;
+    }
+  }
+}
+
+.faq__list {
+  max-width: 970px;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  border: $border-brown;
+  border-bottom: none;
+}
+
+.faq__item {
+  position: relative;
+  padding: 44px 42px 42px;
+  text-align: left;
+  font-family: $font-poppins;
+  color: $black-dark;
+  border-bottom: $border-brown;
+
+  @media (max-width: $desktop-width) {
+    padding-left: 49px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 16px 25px 20px;
+  }
+
+  h3 {
+    margin: 0;
+    padding-right: 100px;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 130%;
+
+    @media (max-width: $tablet-width) {
+      padding-right: 24px;
+      font-size: 16px;
+      line-height: 140%;
+    }
+  }
+
+  p {
+    margin: 10px 360px 0 5px;
+    display: none;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 130%;
+
+    @media (max-width: $desktop-width) {
+      margin: 28px 50px 0 0;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin: 15px 30px 0 0;
+      font-size: 14px;
+      line-height: 140%;
+    }
+  }
+
+  &::after {
+    position: absolute;
+    width: 17px;
+    height: 23.4px;
+    content: "";
+    top: 42px;
+    right: 47px;
+    display: block;
+    background-image: url("../img/arrow-downt.svg");
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: 17px 10px;
+
+    @media (max-width: $desktop-width) {
+      width: 25px;
+      height: 25px;
+      top: 43px;
+      right: 48px;
+      background-size: 25px 14px;
+    }
+
+    @media (max-width: $tablet-width) {
+      top: 16px;
+      right: 22px;
+    }
+  }
+
+  &--active {
+    &::after {
+      transform: rotate(180deg);
+    }
+
+    p {
+      display: block;
+    }
+  }
+}
