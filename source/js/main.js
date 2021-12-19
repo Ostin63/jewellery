@@ -9,10 +9,10 @@
   var headerLogo = header.querySelector('.header__logo');
   var headerCart = header.querySelector('.header__cart-block');
   var headerNav = header.querySelector('.header__nav');
-  var currentDotOut = body.querySelector('.novelty__mobile--current');
-  var totalDotsOut = body.querySelector('.novelty__mobile--total');
+  // var currentDotOut = body.querySelector('.novelty__mobile--current');
+  // var totalDotsOut = body.querySelector('.novelty__mobile--total');
   var noveltySlider = body.querySelector('.novelty__container');
-  var noveltyPagination = body.querySelector('.slider-pagination');
+  // var noveltyPagination = body.querySelector('.slider-pagination');
   // var activeBulet = document.querySelector('.swiper-pagination-bullet-active');
   var faqList = body.querySelector('.faq__list');
   var faqButtons = faqList.querySelectorAll('.faq__item');
@@ -35,13 +35,13 @@
       spaceBetween: 30,
       centeredSlidesBounds: true,
 
-      pagination: {
-        el: '.novelty__slider-pagination',
-        clickable: 'true',
-        renderBullet: function (index, className) {
-          return '<span class="' + className + '">' + (index + 1) + '</span>';
-        },
-      },
+      // pagination: {
+      //   el: '.novelty__slider-pagination',
+      //   clickable: 'true',
+      //   renderBullet: function (index, className) {
+      //     return '<span class="' + className + '">' + (index + 1) + '</span>';
+      //   },
+      // },
 
       navigation: {
         nextEl: '.novelty__slider-button--next',
@@ -52,20 +52,41 @@
         767: {
           slidesPerView: 2,
           slidesPerGroup: 2,
+          pagination: {
+            el: '.novelty__slider-pagination',
+            type: 'fraction',
+            renderFraction: function (currentClass, totalClass) {
+              return '<span class="' + currentClass + '"></span>' + '&ensp;of&ensp;' + '<span class="' + totalClass + '"></span>';
+            },
+          },
         },
         1023: {
           slidesPerView: 3,
           slidesPerGroup: 3,
+          pagination: {
+            el: '.novelty__slider-pagination',
+            clickable: 'true',
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
         },
         1169: {
           slidesPerView: 4,
           slidesPerGroup: 4,
+          pagination: {
+            el: '.novelty__slider-pagination',
+            clickable: 'true',
+            renderBullet: function (index, className) {
+              return '<span class="' + className + '">' + (index + 1) + '</span>';
+            },
+          },
         },
       },
     });
 
-    totalDotsOut.textContent = noveltyPagination.children.length;
-    currentDotOut.textContent = document.querySelector('.swiper-pagination-bullet-active').textContent;
+    // totalDotsOut.textContent = noveltyPagination.children.length;
+    // currentDotOut.textContent = document.querySelector('.swiper-pagination-bullet-active').textContent;
   }
 
   if (faqList) {
