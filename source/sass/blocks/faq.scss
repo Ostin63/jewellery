@@ -52,12 +52,17 @@
     padding: 16px 25px 20px;
   }
 
-  h3 {
+  button {
+    width: 100%;
     margin: 0;
+    text-align: left;
+    border: none;
+    background: none;
     padding-right: 100px;
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;
+    outline: none;
 
     @media (max-width: $tablet-width) {
       padding-right: 24px;
@@ -119,5 +124,10 @@
     p {
       display: block;
     }
+  }
+
+  &:hover,
+  &:focus-within {
+    background-color: $brown-light;
   }
 }
