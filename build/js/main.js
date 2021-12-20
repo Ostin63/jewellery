@@ -9,8 +9,6 @@
   var headerCart = header.querySelector('.header__cart-block');
   var headerNav = header.querySelector('.header__nav');
   var noveltySlider = body.querySelector('.novelty__container');
-  var faqList = body.querySelector('.faq__list');
-  var faqButtons = faqList.querySelectorAll('.faq__item');
 
   function onToggleMenu() {
     header.classList.toggle('header--active-menu');
@@ -88,14 +86,18 @@
         }
       }
     });
+
+    swiper.on('breakpoint', function () {
+      swiper.pagination.render();
+      swiper.pagination.update();
+    });
+
   }
 
-  swiper.on('breakpoint', function () {
-    swiper.pagination.render();
-    swiper.pagination.update();
-  });
-
   if (faqList) {
+    var faqList = body.querySelector('.faq__list');
+    var faqButtons = faqList.querySelectorAll('.faq__item');
+
     for (var i = 0; i < faqButtons.length; i++) {
       faqButtons[i].classList.remove('faq__item--active');
     }

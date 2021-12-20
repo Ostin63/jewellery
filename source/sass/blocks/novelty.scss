@@ -184,13 +184,15 @@
   }
 }
 
-.swiper-pagination-fraction {
+.swiper-pagination-bullets {
+  @media (max-width: $tablet-width) {
     font-family: $font-poppins;
     font-weight: 500;
     font-size: 16px;
     line-height: 130%;
     text-align: center;
     color: $black-dark;
+  }
 }
 
 .swiper-pagination-bullet-active {
