@@ -109,5 +109,6 @@
   onToggleMenu();
 
   buttonMenu.addEventListener('click', onToggleMenu);
+
   return swiper;
 })();
