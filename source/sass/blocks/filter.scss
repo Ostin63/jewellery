@@ -1,5 +1,87 @@
 .filter {
+  display: block;
+
+  @media (max-width: $desktop-width) {
+    display: none;
+
+    &--active {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: flex-start;
+
+      &::after {
+        position: fixed;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        content: "";
+        display: block;
+        z-index: 1200;
+        background: $white;
+      }
+
+      .filter__wrapper-field {
+        border: none;
+      }
+
+      .filter__close {
+        position: absolute;
+        width: 32px;
+        height: 32px;
+        top: -16px;
+        right: -16px;
+        display: block;
+        border-radius: 50%;
+        border: none;
+        background: url("../img/filter-close.svg") 50% 50% no-repeat;
+        cursor: pointer;
+
+        @media (max-width: $tablet-width) {
+          right: -10px;
+        }
+      }
+    }
+  }
+}
+
+.filter__wrapper-scroll {
+  @media (max-width: $desktop-width) {
+    position: relative;
+    display: block;
+    padding: 28px 28px 28px 0;
+    overflow-y: auto;
+  }
+
+  @media (max-width: $tablet-width) {
+    position: relative;
+    display: block;
+    padding: 76px 25px 10px 25px;
+  }
+}
+
+.filter__wrapper {
+  min-width: 250px;
+  margin-right: 15px;
   background: $white;
+
+  @media (max-width: $desktop-width) {
+    position: relative;
+    max-width: 423px;
+    margin-right: 0;
+    padding: 0 0 20px;
+    box-shadow: $shadow-gray;
+    z-index: 1500;
+  }
+
+  @media (max-width: $tablet-width) {
+    max-width: 760px;
+  }
 }
 
 .filter__close {
@@ -24,9 +106,30 @@
 .filter__block-tab {
   position: relative;
   width: 100%;
-  height: 68px;
-  padding: 23px 25px 0;
+  padding: 23px 25px;
   border-bottom: $border-brown;
+  cursor: pointer;
+
+  &--range {
+    padding-bottom: 19px;
+  }
+
+  @media (max-width: $desktop-width) {
+    padding: 34px 22px;
+  }
+
+
+  @media (max-width: $tablet-width) {
+    padding: 24px 20px;
+
+    &--range {
+      padding: 24px 10px;
+
+      button {
+        margin-left: 10px;
+      }
+    }
+  }
 
   button {
     padding: 0;
@@ -39,6 +142,11 @@
     color: $black-dark;
     background: none;
     outline: none;
+    cursor: pointer;
+
+    @media (max-width: $desktop-width) {
+      font-size: 18px;
+    }
   }
 
   &::after {
@@ -53,26 +161,235 @@
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: 17px 10px;
+
+    @media (max-width: $desktop-width) {
+      width: 23px;
+      height: 12px;
+      top: 40px;
+      right: 40px;
+      background-size: cover;
+    }
+
+    @media (max-width: $tablet-width) {
+      width: 20px;
+      height: 10px;
+      top: 32px;
+      right: 20px;
+    }
   }
 
   &--active {
     &::after {
       transform: rotate(180deg);
     }
+
+    .filter__wrapper-open {
+      display: block;
+    }
   }
 
   &:hover,
   &:focus-within {
-    background-color: $brown-light;
+    outline: $border-brown;
+    outline-offset: -4px;
   }
 }
 
 .filter__wrapper-open {
+  position: relative;
+  margin-top: 25px;
   display: none;
+
+  &--range {
+    margin-top: 10px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding-bottom: 1px;
+  }
+}
+
+.filter__wrapper-input {
+  margin-top: 12px;
+
+  label {
+    margin-left: 8px;
+    display: flex;
+    font-family: $font-poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $black-dark;
+
+    &::before {
+      width: 16px;
+      height: 15px;
+      margin-right: 10px;
+      content: "";
+      display: block;
+      background: url("../img/checkbox-off.svg") 50% 50% no-repeat;
+      background-size: cover;
+
+      @media (max-width: $desktop-width) {
+        width: 18px;
+        height: 18px;
+      }
+    }
+
+    @media (max-width: $desktop-width) {
+      font-size: 16px;
+    }
+
+    @media (max-width: $tablet-width) {
+      margin-left: 10px;
+    }
+  }
+
+  input:checked {
+    &+label::before {
+      background: url("../img/checkbox-on.svg") 50% 50% no-repeat;
+    }
+  }
+
+  input:focus,
+  input:hover {
+    &+label::before {
+      outline: $border-brown;
+      outline-offset: 2px;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    margin: 17px 0 0;
+  }
+}
+
+.filter__range-controls {
+  position: relative;
+  padding-top: 17px;
+  display: block;
+
+  @media (max-width: $desktop-width) {
+    margin-left: 9px;
+    margin-right: 63px;
+    padding-top: 24px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 250px;
+    margin: 0 auto;
+    padding-top: 21px;
+  }
+}
+
+.filter__scale {
+  width: 100%;
+  height: 1px;
+  background: $brown-light;
+
+}
+
+.filter__bar {
+  width: 80%;
+  height: 1px;
+  background: $brown;
+}
+
+.filter__toggle {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  top: 10px;
+  border-radius: 50%;
+  background: $brown;
+  cursor: grabbing;
+
+  &--min {
+    left: 42px;
+  }
+
+  &--max {
+    left: 149px;
+  }
+
+  @media (max-width: $desktop-width) {
+    width: 18px;
+    height: 18px;
+    top: 16px;
+
+    &--min {
+      left: 54px;
+    }
+
+    &--max {
+      left: 230px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    top: 13px;
+
+    &--min {
+      left: 40px;
+    }
+
+    &--max {
+      left: 178px;
+    }
+  }
+}
+
+.filter__price-controls {
+  padding-left: 37px;
+  display: flex;
+  justify-content: space-between;
+
+  @media (max-width: $desktop-width) {
+    padding-left: 45px;
+    margin-right: 100px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 200px;
+    margin: 0 auto;
+    padding-left: 6px;
+  }
+}
+
+.filter__block-price {
+  margin-top: 12px;
+
+  input,
+  label {
+    padding: 0;
+    border: none;
+    width: 46px;
+    font-family: $font-poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 130%;
+    color: $black-dark;
+
+    @media (max-width: $desktop-width) {
+      font-size: 16px;
+    }
+  }
+
+  @media (max-width: $desktop-width) {
+    margin-top: 16px;
+  }
 }
 
 .filter__wrapper-buttons {
   margin-top: 35px;
+
+  @media (max-width: $desktop-width) {
+    margin: 38px 40px 0 21px;
+  }
+
+  @media (max-width: $tablet-width) {
+    margin: 30px 20px 0 20px;
+  }
 }
 
 .filter__button {
@@ -87,6 +404,17 @@
   justify-content: center;
   align-items: center;
   border: $border-brown;
+  cursor: pointer;
+
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
 
   &--submit {
     color: $white;
@@ -97,15 +425,19 @@
     margin-top: 25px;
     background: $white;
     color: $black-dark;
-  }
 
-  &:hover,
-  &:focus {
-    outline: $border-brown;
-    outline-offset: 4px;
-  }
+    @media (max-width: $tablet-width) {
+      margin-top: 20px;
+    }
 
-  &:active {
-    opacity: 0.7;
+    &:hover,
+    &:focus {
+      color: $white;
+      background: $brown;
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
   }
 }

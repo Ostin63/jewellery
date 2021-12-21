@@ -1,7 +1,8 @@
 /* eslint-disable no-undef */
 'use strict';
 (function () {
-  var body = document.querySelector('body');
+  var page = document.querySelector('.page');
+  var body = page.querySelector('body');
   var header = body.querySelector('.header');
   var buttonMenu = header.querySelector('.header__toggle');
   var search = header.querySelector('.header__search');
@@ -9,10 +10,11 @@
   var headerCart = header.querySelector('.header__cart-block');
   var headerNav = header.querySelector('.header__nav');
   var noveltySlider = body.querySelector('.novelty__container');
-  var catalogSlider = document.querySelector('.catalog__container');
   var faqList = body.querySelector('.faq__list');
-  var swiper;
-
+  var filterForm = body.querySelector('.filter__form');
+  var buttonFilterLink = body.querySelector('.catalog__filter-link');
+  var formFilter = body.querySelector('.filter');
+  var filterClose = body.querySelector('.filter__close');
   function onToggleMenu() {
     header.classList.toggle('header--active-menu');
     buttonMenu.classList.toggle('header__toggle--active-menu');
@@ -23,7 +25,7 @@
   }
 
   if (noveltySlider) {
-    swiper = new Swiper('.novelty__container', {
+    var swiper = new Swiper('.novelty__container', {
       slidesPerGroup: 2,
       slidesPerView: 2,
       centeredSlides: false,
@@ -101,7 +103,8 @@
     var faqButtons = faqList.querySelectorAll('.faq__item');
 
     for (var i = 0; i < faqButtons.length; i++) {
-      faqButtons[i].classList.remove('faq__item--active');
+      var button = faqButtons[i];
+      button.classList.remove('faq__item--active');
     }
 
     faqList.addEventListener('click', function (evt) {
@@ -110,10 +113,28 @@
     });
   }
 
-  if (catalogSlider) {
-    swiper = new Swiper('.catalog__container', {
-      slidesPerGroup: 12,
+  if (filterForm) {
+    var filterButtons = filterForm.querySelectorAll('.filter__block-tab');
 
+    for (var j = 0; j < filterButtons.length; j++) {
+      var item = filterButtons[j];
+      item.classList.remove('filter__block-tab--active');
+    }
+
+    buttonFilterLink.addEventListener('click', function (evt) {
+      evt.preventDefault();
+      formFilter.classList.add('filter--active');
+      page.classList.add('page--active');
+    });
+
+    filterClose.addEventListener('click', function () {
+      formFilter.classList.remove('filter--active');
+      page.classList.remove('page--active');
+    });
+
+    filterForm.addEventListener('click', function (evt) {
+      var faqItem = evt.target.closest('div');
+      faqItem.classList.toggle('filter__block-tab--active');
     });
   }
 
