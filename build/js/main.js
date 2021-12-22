@@ -17,9 +17,9 @@
   var buttonFilterLink = body.querySelector('.catalog__filter-link');
   var formFilter = body.querySelector('.filter');
   var filterClose = body.querySelector('.filter__close');
-  var modal = body.querySelector('.modal');
-  var modalForm = modal.querySelector('.modal__form');
-  var modalClose = modal.querySelector('.modal__close');
+  var modal = body.querySelector('.login');
+  var modalForm = modal.querySelector('.login__form');
+  var modalClose = modal.querySelector('.login__close');
   var mailfield = modal.querySelector('input[name=email]');
   var passwordfield = modal.querySelector('input[password]');
 
@@ -45,7 +45,7 @@
 
   function onModalAdd(evt) {
     evt.preventDefault();
-    modal.classList.remove('modal--deactive');
+    modal.classList.remove('login--deactive');
     page.classList.add('page--active');
     if (storage) {
       mailfield.value = storage;
@@ -56,13 +56,13 @@
   }
 
   function onModalClose() {
-    modal.classList.add('modal--deactive');
+    modal.classList.add('login--deactive');
     page.classList.remove('page--active');
   }
 
   function onEscapePressModal(evt) {
     if (evt.keyCode === ESC) {
-      if (!modal.classList.contains('modal--deactive')) {
+      if (!modal.classList.contains('login--deactive')) {
         evt.preventDefault();
         onModalClose();
       }
@@ -215,7 +215,7 @@
 
   function onModalAddButton(evt) {
     evt.preventDefault();
-    modal.classList.remove('modal--deactive');
+    modal.classList.remove('login--deactive');
     page.classList.add('page--active');
 
     onToggleMenu();

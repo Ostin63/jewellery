@@ -1,4 +1,4 @@
-.modal {
+.login {
   position: fixed;
   width: 100%;
   height: 100%;
@@ -22,9 +22,17 @@
     background: $white;
     z-index: 1000;
   }
+
+  &--site {
+    position: static;
+
+    &::before {
+      display: none;
+    }
+  }
 }
 
-.modal__wrapper {
+.login__wrapper {
   position: relative;
   width: 430px;
   overflow-y: auto;
@@ -39,9 +47,15 @@
   @media (max-width: $tablet-width) {
     width: 270px;
   }
+
+  &--site {
+    position: relative;
+    margin: 0 auto 50px;
+    overflow-y: hidden;
+  }
 }
 
-.modal__wrapper-img {
+.login__wrapper-img {
   width: 430px;
   height: 138px;
 
@@ -69,7 +83,7 @@
   }
 }
 
-.modal__form-wrapper {
+.login__form-wrapper {
   padding: 50px 45px 55px;
 
   @media (max-width: $desktop-width) {
@@ -96,7 +110,7 @@
   }
 }
 
-.modal__form {
+.login__form {
   display: flex;
   flex-direction: column;
 
@@ -127,7 +141,6 @@
     &:hover,
     &:focus {
       outline: $border-dark;
-      outline-offset: 4px;
     }
 
     &:active {
@@ -136,7 +149,7 @@
   }
 }
 
-.modal__restore-link {
+.login__restore-link {
   padding: 5px 0;
   align-self: flex-end;
   text-decoration: none;
@@ -149,7 +162,6 @@
   &:hover,
   &:focus {
     outline: $border-dark;
-    outline-offset: 4px;
   }
 
   &:active {
@@ -157,7 +169,7 @@
   }
 }
 
-.modal__submit {
+.login__submit {
   width: 100%;
   height: 68px;
   margin: 40px 0 15px;
@@ -183,7 +195,7 @@
   }
 }
 
-.modal__signup-link {
+.login__signup-link {
   display: block;
   text-align: center;
   text-decoration: none;
@@ -208,7 +220,7 @@
   }
 }
 
-.modal__close {
+.login__close {
   position: absolute;
   width: 30px;
   height: 30px;
