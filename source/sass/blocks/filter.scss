@@ -5,7 +5,7 @@
     display: none;
 
     &--active {
-      position: absolute;
+      position: fixed;
       width: 100%;
       height: 100%;
       top: 0;
@@ -44,6 +44,16 @@
 
         @media (max-width: $tablet-width) {
           right: -10px;
+        }
+
+        &:hover,
+        &:focus-within {
+          outline: $border-brown;
+          outline-offset: 4px;
+        }
+
+        &:active {
+          opacity: 0.5;
         }
       }
     }
@@ -246,14 +256,14 @@
   }
 
   input:checked {
-    &+label::before {
+    & + label::before {
       background: url("../img/checkbox-on.svg") 50% 50% no-repeat;
     }
   }
 
   input:focus,
   input:hover {
-    &+label::before {
+    & + label::before {
       outline: $border-brown;
       outline-offset: 2px;
     }
@@ -286,7 +296,6 @@
   width: 100%;
   height: 1px;
   background: $brown-light;
-
 }
 
 .filter__bar {

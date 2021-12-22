@@ -1,0 +1,247 @@
+.modal {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  justify-content: center;
+  align-items: center;
+
+  &--deactive {
+    display: none;
+  }
+
+  &::before {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    content: "";
+    display: block;
+    background: $white;
+    z-index: 1000;
+  }
+}
+
+.modal__wrapper {
+  position: relative;
+  width: 430px;
+  overflow-y: auto;
+  background: $brown-light;
+  box-shadow: $shadow-gray-ligth;
+  z-index: 1500;
+
+  @media (max-width: $desktop-width) {
+    width: 442px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 270px;
+  }
+}
+
+.modal__wrapper-img {
+  width: 430px;
+  height: 138px;
+
+  img {
+    width: 430px;
+    height: 138px;
+  }
+
+  @media (max-width: $desktop-width) {
+    width: 442px;
+
+    img {
+      width: 442px;
+    }
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 270px;
+    height: 84px;
+
+    img {
+      width: 270px;
+      height: 84px;
+    }
+  }
+}
+
+.modal__form-wrapper {
+  padding: 50px 45px 55px;
+
+  @media (max-width: $desktop-width) {
+    padding-right: 51px;
+    padding-left: 51px;
+  }
+
+  @media (max-width: $tablet-width) {
+    padding: 36px 15px 39px;
+  }
+
+  h2 {
+    margin: 0;
+    font-family: $font-cormorant;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 130%;
+    text-align: center;
+    color: $black-dark;
+
+    @media (max-width: $tablet-width) {
+      font-size: 24px;
+    }
+  }
+}
+
+.modal__form {
+  display: flex;
+  flex-direction: column;
+
+  input {
+    width: 100%;
+    height: 40px;
+    margin-top: 24px;
+    padding: 0;
+    font-family: $font-poppins;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 40px;
+    color: $black;
+    border: none;
+    border-bottom: $border-dark;
+    background: none;
+
+    &::placeholder {
+      color: $gray;
+    }
+
+    @media (max-width: $tablet-width) {
+      height: 45px;
+      margin-top: 14px;
+      line-height: 45px;
+    }
+
+    &:hover,
+    &:focus {
+      outline: $border-dark;
+      outline-offset: 4px;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+}
+
+.modal__restore-link {
+  padding: 5px 0;
+  align-self: flex-end;
+  text-decoration: none;
+  font-family: $font-poppins;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  color: $gray;
+
+  &:hover,
+  &:focus {
+    outline: $border-dark;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.modal__submit {
+  width: 100%;
+  height: 68px;
+  margin: 40px 0 15px;
+  font-family: $font-poppins;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 130%;
+  color: $white;
+  background: $brown;
+  border: $border-brown;
+
+  @media (max-width: $tablet-width) {
+    margin-top: 30px;
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+
+  &:active {
+    opacity: 0.5;
+  }
+}
+
+.modal__signup-link {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  font-family: $font-poppins;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 21px;
+  color: $gray;
+
+  span {
+    color: $black-dark;
+  }
+
+  &:hover,
+  &:focus {
+    outline: $border-dark;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.modal__close {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  content: "";
+  top: 12px;
+  right: 12px;
+  border: none;
+  background: url("../img/modal-close.svg") 50% 50% no-repeat;
+  background-size: 14px 14px;
+
+  @media (max-width: $desktop-width) {
+    width: 40px;
+    height: 40px;
+    top: 10px;
+    right: 10px;
+    background-size: 20px 20px;
+  }
+
+  @media (max-width: $tablet-width) {
+    width: 30px;
+    height: 30px;
+    top: 7px;
+    right: 7px;
+    background-size: 14px 14px;
+  }
+
+  &:hover,
+  &:focus {
+    outline: $border-dark;
+    outline-offset: 4px;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}

@@ -67,16 +67,6 @@
       height: 18px;
       display: block;
       fill: $black-dark;
-
-      &:hover,
-      &:focus {
-        outline: $border-brown;
-        outline-offset: 4px;
-      }
-
-      &:active {
-        opacity: 0.7;
-      }
     }
 
     &--active-menu {
@@ -88,6 +78,16 @@
           outline: $border-white;
         }
       }
+    }
+
+    &:hover,
+    &:focus {
+      outline: $border-brown;
+      outline-offset: 4px;
+    }
+
+    &:active {
+      opacity: 0.7;
     }
   }
 }
@@ -208,7 +208,6 @@
 
 .header__login,
 .header__cart-block {
-
   &:hover,
   &:focus {
     outline: $border-brown;

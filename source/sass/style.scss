@@ -1,5 +1,5 @@
-@import "swiper-vars.scss";
-@import "swiper-bundle.scss";
+@import "vendor/swiper-vars.scss";
+@import "vendor/swiper-bundle.scss";
 @import "fonts.scss";
 @import "variables.scss";
 @import "global.scss";
@@ -15,3 +15,4 @@
 @import "blocks/catalog.scss";
 @import "blocks/filter.scss";
 @import "blocks/footer.scss";
+@import "blocks/modal.scss";

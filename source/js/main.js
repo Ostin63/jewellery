@@ -4,6 +4,8 @@
   var page = document.querySelector('.page');
   var body = page.querySelector('body');
   var header = body.querySelector('.header');
+  var headerLogin = body.querySelector('.header__login');
+  var bottomLogin = body.querySelector('.header__menu-item--bottom-login a');
   var buttonMenu = header.querySelector('.header__toggle');
   var search = header.querySelector('.header__search');
   var headerLogo = header.querySelector('.header__logo');
@@ -15,6 +17,71 @@
   var buttonFilterLink = body.querySelector('.catalog__filter-link');
   var formFilter = body.querySelector('.filter');
   var filterClose = body.querySelector('.filter__close');
+  var modal = body.querySelector('.modal');
+  var modalForm = modal.querySelector('.modal__form');
+  var modalClose = modal.querySelector('.modal__close');
+  var mailfield = modal.querySelector('input[name=email]');
+  var passwordfield = modal.querySelector('input[password]');
+
+  var ESC = 27;
+  var TAB = 9;
+
+  var isStorageSupport = true;
+  var storage = '';
+
+  try {
+    storage = localStorage.getItem('mailfield');
+  } catch (err) {
+    isStorageSupport = false;
+  }
+
+  function onSubmitForm() {
+    if (mailfield.value) {
+      if (isStorageSupport) {
+        localStorage.setItem('mailfield', mailfield.value);
+      }
+    }
+  }
+
+  function onModalAdd(evt) {
+    evt.preventDefault();
+    modal.classList.remove('modal--deactive');
+    page.classList.add('page--active');
+    if (storage) {
+      mailfield.value = storage;
+      passwordfield.focus();
+    } else {
+      mailfield.focus();
+    }
+  }
+
+  function onModalClose() {
+    modal.classList.add('modal--deactive');
+    page.classList.remove('page--active');
+  }
+
+  function onEscapePressModal(evt) {
+    if (evt.keyCode === ESC) {
+      if (!modal.classList.contains('modal--deactive')) {
+        evt.preventDefault();
+        onModalClose();
+      }
+    }
+  }
+
+  function onTabPress(evt) {
+    if (evt.keyCode === TAB && document.activeElement === modalClose) {
+      evt.preventDefault();
+      mailfield.focus();
+    }
+  }
+
+  function onOverlayModal(evt) {
+    if (evt.target === evt.currentTarget) {
+      onModalClose();
+    }
+  }
+
   function onToggleMenu() {
     header.classList.toggle('header--active-menu');
     buttonMenu.classList.toggle('header__toggle--active-menu');
@@ -99,48 +166,95 @@
 
   }
 
-  if (faqList) {
-    var faqButtons = faqList.querySelectorAll('.faq__item');
-
-    for (var i = 0; i < faqButtons.length; i++) {
-      var button = faqButtons[i];
-      button.classList.remove('faq__item--active');
+  function onRemoveBlock(buttons, element) {
+    for (var i = 0; i < buttons.length; i++) {
+      var button = buttons[i];
+      button.classList.remove(element);
     }
+  }
 
-    faqList.addEventListener('click', function (evt) {
-      var faqItem = evt.target.closest('li');
-      faqItem.classList.toggle('faq__item--active');
+  function onAddBlock(button, tag, entity) {
+    button.addEventListener('click', function (evt) {
+      var item = evt.target.closest(tag);
+      item.classList.toggle(entity);
     });
   }
 
-  if (filterForm) {
-    var filterButtons = filterForm.querySelectorAll('.filter__block-tab');
+  function onAddFilter(evt) {
+    evt.preventDefault();
+    formFilter.classList.add('filter--active');
+    page.classList.add('page--active');
+  }
 
-    for (var j = 0; j < filterButtons.length; j++) {
-      var item = filterButtons[j];
-      item.classList.remove('filter__block-tab--active');
+  function onRemoveFilter() {
+    formFilter.classList.remove('filter--active');
+    page.classList.remove('page--active');
+  }
+
+  function onEscapeFilter(evt) {
+    if (evt.keyCode === ESC) {
+      if (formFilter.classList.contains('filter--active')) {
+        evt.preventDefault();
+        onRemoveFilter();
+      }
     }
+  }
 
-    buttonFilterLink.addEventListener('click', function (evt) {
+  function onOverlayFilter(evt) {
+    if (evt.target === evt.currentTarget) {
+      onRemoveFilter();
+    }
+  }
+
+  function onTabPressFilter(evt) {
+    if (evt.keyCode === TAB && document.activeElement === filterClose) {
       evt.preventDefault();
-      formFilter.classList.add('filter--active');
-      page.classList.add('page--active');
-    });
+      filterBlockFirst.focus();
+    }
+  }
 
-    filterClose.addEventListener('click', function () {
-      formFilter.classList.remove('filter--active');
-      page.classList.remove('page--active');
-    });
+  function onModalAddButton(evt) {
+    evt.preventDefault();
+    modal.classList.remove('modal--deactive');
+    page.classList.add('page--active');
 
-    filterForm.addEventListener('click', function (evt) {
-      var faqItem = evt.target.closest('div');
-      faqItem.classList.toggle('filter__block-tab--active');
-    });
+    onToggleMenu();
+    if (storage) {
+      mailfield.focus();
+    }
   }
 
   onToggleMenu();
 
+  if (filterForm) {
+    var filterButtons = filterForm.querySelectorAll('.filter__block-tab');
+    var filterBlockFirst = formFilter.querySelector('.filter__block-tab--first button');
+
+    onRemoveBlock(filterButtons, 'filter__block-tab--active');
+    onAddBlock(filterForm, 'div', 'filter__block-tab--active');
+
+    buttonFilterLink.addEventListener('click', onAddFilter);
+    filterClose.addEventListener('click', onRemoveFilter);
+    formFilter.addEventListener('click', onOverlayFilter);
+  }
+
+  if (faqList) {
+    var faqButtons = faqList.querySelectorAll('.faq__item');
+
+    onRemoveBlock(faqButtons, 'faq__item--active');
+    onAddBlock(faqList, 'li', 'faq__item--active');
+  }
+
+  document.addEventListener('keydown', onTabPressFilter);
   buttonMenu.addEventListener('click', onToggleMenu);
+  document.addEventListener('keydown', onTabPress);
+  headerLogin.addEventListener('click', onModalAdd);
+  bottomLogin.addEventListener('click', onModalAddButton);
+  modalForm.addEventListener('click', onSubmitForm);
+  modalClose.addEventListener('click', onModalClose);
+  modal.addEventListener('click', onOverlayModal);
+  window.addEventListener('keydown', onEscapePressModal);
+  window.addEventListener('keydown', onEscapeFilter);
 
   return swiper;
 })();

@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "editorconfig": "editorconfig-cli --exclude vendor",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss --exclude vendor",
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "build": "gulp build",
     "start": "gulp start",
