@@ -64,7 +64,7 @@
   @media (max-width: $desktop-width) {
     position: relative;
     display: block;
-    padding: 28px 28px 28px 0;
+    padding: 28px;
     overflow-y: auto;
   }
 
@@ -84,6 +84,7 @@
     position: relative;
     max-width: 423px;
     margin-right: 0;
+    margin: 0 auto;
     padding: 0 0 20px;
     box-shadow: $shadow-gray;
     z-index: 1500;
