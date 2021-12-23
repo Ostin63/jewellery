@@ -5,7 +5,7 @@
   "main": "gulpfile.js",
   "scripts": {
     "editorconfig": "editorconfig-cli --exclude vendor",
-    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss --exclude vendor",
+    "stylelint": "stylelint \"source/sass/**/*.scss\" --syntax scss",
     "test": "npm run editorconfig && npm run stylelint && eslint source/js/",
     "build": "gulp build",
     "start": "gulp start",
@@ -29,6 +29,7 @@
     "eslint": "4.16.0",
     "eslint-config-htmlacademy": "0.4.x",
     "gulp": "4.0.x",
+    "gulp-concat": "^2.6.1",
     "gulp-csso": "^3.0.1",
     "gulp-imagemin": "^5.0.3",
     "gulp-plumber": "1.2.x",

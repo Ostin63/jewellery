@@ -46,7 +46,7 @@
     content: "";
     display: block;
     background-color: $brown;
-    background-image: url('../img/modal-img.jpg');
+    background-image: url("../img/modal-img.jpg");
     background-position: 50% 50%;
     background-repeat: no-repeat;
     background-size: cover;
@@ -69,7 +69,7 @@
 
     &::before {
       width: 442px;
-      background-image: url('../img/modal-img-768.jpg');
+      background-image: url("../img/modal-img-768.jpg");
     }
   }
 
@@ -79,7 +79,7 @@
     &::before {
       width: 270px;
       height: 84px;
-      background: url('../img/modal-img-768.jpg') 50% 50% none;
+      background: url("../img/modal-img-768.jpg") 50% 50% none;
     }
   }
 
