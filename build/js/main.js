@@ -191,21 +191,6 @@
     page.classList.remove('page--active');
   }
 
-  function onEscapeFilter(evt) {
-    if (evt.keyCode === ESC) {
-      if (formFilter.classList.contains('filter--active')) {
-        evt.preventDefault();
-        onRemoveFilter();
-      }
-    }
-  }
-
-  function onOverlayFilter(evt) {
-    if (evt.target === evt.currentTarget) {
-      onRemoveFilter();
-    }
-  }
-
   function onTabPressFilter(evt) {
     if (evt.keyCode === TAB && document.activeElement === filterClose) {
       evt.preventDefault();
@@ -235,7 +220,6 @@
 
     buttonFilterLink.addEventListener('click', onAddFilter);
     filterClose.addEventListener('click', onRemoveFilter);
-    formFilter.addEventListener('click', onOverlayFilter);
   }
 
   if (faqList) {
@@ -254,7 +238,6 @@
   modalClose.addEventListener('click', onModalClose);
   modal.addEventListener('click', onOverlayModal);
   window.addEventListener('keydown', onEscapePressModal);
-  window.addEventListener('keydown', onEscapeFilter);
 
   return swiper;
 })();

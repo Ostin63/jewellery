@@ -77,17 +77,6 @@
       fill: $black-dark;
     }
 
-    &--active-menu {
-      svg {
-        fill: $white;
-
-        &:hover,
-        &:focus {
-          outline: $border-white;
-        }
-      }
-    }
-
     &:hover,
     &:focus {
       outline: $border-brown;
@@ -96,6 +85,17 @@
 
     &:active {
       opacity: 0.7;
+    }
+
+    &--active-menu {
+      svg {
+        fill: $white;
+      }
+
+      &:hover,
+      &:focus {
+        outline: $border-white;
+      }
     }
   }
 }
@@ -163,15 +163,6 @@
     }
   }
 
-  @media (max-width: $desktop-width) {
-    margin-left: -5px;
-
-    &--active-menu {
-      svg {
-        fill: $white;
-      }
-    }
-  }
 
   &:hover,
   &:focus {
@@ -181,6 +172,21 @@
 
   &:active {
     opacity: 0.7;
+  }
+
+  @media (max-width: $desktop-width) {
+    margin-left: -5px;
+
+    &--active-menu {
+      svg {
+        fill: $white;
+      }
+
+      &:hover,
+      &:focus {
+        outline: $border-white;
+      }
+    }
   }
 
   &--site {
