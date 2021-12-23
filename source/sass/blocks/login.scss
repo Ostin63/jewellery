@@ -40,46 +40,53 @@
   box-shadow: $shadow-gray-ligth;
   z-index: 1500;
 
+  &::before {
+    width: 430px;
+    height: 138px;
+    content: "";
+    display: block;
+    background-color: $brown;
+    background-image: url('../img/modal-img.jpg');
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("../img/modal-img@2.jpg");
+
+      @media (max-width: $desktop-width) {
+        background-image: url("../img/modal-img-768@2.jpg");
+      }
+
+      @media (max-width: $mobile-width) {
+        background-image: url("../img/modal-img-320-bg@2.jpg");
+      }
+    }
+  }
+
   @media (max-width: $desktop-width) {
     width: 442px;
+
+    &::before {
+      width: 442px;
+      background-image: url('../img/modal-img-768.jpg');
+    }
   }
 
   @media (max-width: $tablet-width) {
     width: 270px;
+
+    &::before {
+      width: 270px;
+      height: 84px;
+      background: url('../img/modal-img-768.jpg') 50% 50% none;
+    }
   }
 
   &--site {
     position: relative;
     margin: 0 auto 50px;
     overflow-y: hidden;
-  }
-}
-
-.login__wrapper-img {
-  width: 430px;
-  height: 138px;
-
-  img {
-    width: 430px;
-    height: 138px;
-  }
-
-  @media (max-width: $desktop-width) {
-    width: 442px;
-
-    img {
-      width: 442px;
-    }
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 270px;
-    height: 84px;
-
-    img {
-      width: 270px;
-      height: 84px;
-    }
   }
 }
 
