@@ -90,10 +90,6 @@
     headerCart.classList.toggle('header__cart-block--active-menu');
     headerNav.classList.toggle('header__nav--active-menu');
   }
-  function onToggleMenuPage() {
-    onToggleMenu();
-    page.classList.toggle('page--active');
-  }
 
   if (noveltySlider) {
     var swiper = new Swiper('.novelty__container', {
@@ -234,7 +230,7 @@
   }
 
   document.addEventListener('keydown', onTabPressFilter);
-  buttonMenu.addEventListener('click', onToggleMenuPage);
+  buttonMenu.addEventListener('click', onToggleMenu);
   document.addEventListener('keydown', onTabPress);
   headerLogin.addEventListener('click', onModalAdd);
   bottomLogin.addEventListener('click', onModalAddButton);
