@@ -137,8 +137,8 @@
           }
         },
         1023: {
-          slidesPerView: 3,
-          slidesPerGroup: 3,
+          slidesPerView: 4,
+          slidesPerGroup: 4,
           pagination: {
             el: '.novelty__slider-pagination',
             type: 'bullets',

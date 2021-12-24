@@ -37,7 +37,7 @@
 
 .faq__item {
   position: relative;
-  padding: 44px 42px 42px;
+  padding: 44px 42px 40px;
   text-align: left;
   font-family: $font-poppins;
   color: $black-dark;
@@ -49,16 +49,18 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding: 16px 25px 20px;
+    padding: 16px 25px 18px;
   }
 
   button {
     width: 100%;
     margin: 0;
+    padding: 0;
     text-align: left;
     border: none;
     background: none;
     padding-right: 100px;
+    font-family: $font-poppins;
     font-weight: 500;
     font-size: 18px;
     line-height: 130%;

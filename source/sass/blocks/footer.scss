@@ -28,6 +28,10 @@
   flex-basis: 50%;
   padding-right: 84px;
 
+  @media (max-width: $desktop-width-only) {
+    flex-basis: 40%;
+  }
+
   @media (max-width: $desktop-width) {
     max-width: 560px;
     padding: 0 0 40px;
@@ -140,6 +144,10 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  @media (max-width: $desktop-width-only) {
+    flex-basis: 40%;
+  }
 
   @media (max-width: $desktop-width) {
     flex-basis: 65.5%;

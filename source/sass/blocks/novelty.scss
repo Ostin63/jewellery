@@ -90,7 +90,7 @@
 }
 
 .novelty__card-link {
-  width: 270px;
+  width: auto;
   margin: 0 auto;
   padding-bottom: 20px;
   display: block;
@@ -100,18 +100,8 @@
   color: $black-dark;
 
   img {
-    width: 270px;
-    height: 284px;
-
-    @media (max-width: $desktop-width) {
-      width: 324px;
-      height: 340px;
-    }
-
-    @media (max-width: $tablet-width) {
-      width: 130px;
-      height: 136px;
-    }
+    width: 100%;
+    height: auto;
   }
 
   h3 {
@@ -141,14 +131,6 @@
   &:active {
     opacity: 0.7;
   }
-
-  @media (max-width: $desktop-width) {
-    width: 324px;
-  }
-
-  @media (max-width: $tablet-width) {
-    width: 130px;
-  }
 }
 
 .novelty__slider-pagination {
@@ -159,6 +141,10 @@
 
   @media (max-width: $desktop-width) {
     bottom: 65px;
+  }
+
+  @media (max-width: $tablet-width) {
+    bottom: 55px;
   }
 }
 

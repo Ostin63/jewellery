@@ -3,9 +3,7 @@
   scroll-behavior: smooth;
   overflow: visible;
 
-  @media (max-width: $desktop-width) {
-    &--active {
-      overflow: hidden;
-    }
+  &--active {
+    overflow: hidden;
   }
 }

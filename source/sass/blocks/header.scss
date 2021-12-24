@@ -134,10 +134,14 @@
     line-height: 21px;
     display: flex;
     align-items: center;
-    color: $gray;
+    color: $black;
     background: transparent;
     border: 1px solid transparent;
     border-radius: inherit;
+
+    &::placeholder {
+      color: $gray;
+    }
 
     &:hover,
     &:focus {
@@ -167,15 +171,17 @@
     }
   }
 
+  &--catalog,
+  &--site {
+    &:hover,
+    &:focus {
+      outline: $border-brown;
+      outline-offset: 4px;
+    }
 
-  &:hover,
-  &:focus {
-    outline: $border-brown;
-    outline-offset: 4px;
-  }
-
-  &:active {
-    opacity: 0.7;
+    &:active {
+      opacity: 0.7;
+    }
   }
 
   @media (max-width: $desktop-width) {
@@ -232,7 +238,6 @@
 
 .header__login,
 .header__cart-block {
-
   &:hover,
   &:focus {
     outline: $border-brown;
