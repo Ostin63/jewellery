@@ -16,7 +16,6 @@
   }
 
   @media (max-width: $desktop-width) {
-    // padding-bottom: 30px;
     padding: 0;
   }
 
@@ -237,6 +236,7 @@
 
 .header__login,
 .header__cart-block {
+
   &:hover,
   &:focus {
     outline: $border-brown;
@@ -383,18 +383,18 @@
     position: fixed;
     height: 100%;
     top: 122px;
-  }
 
-  &::before {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    content: "";
-    top: 0;
-    left: 0;
-    display: block;
-    background: $brown;
-    z-index: 50;
+    &::before {
+      position: fixed;
+      width: 100%;
+      height: 100%;
+      content: "";
+      top: 0;
+      left: 0;
+      display: block;
+      background: $brown;
+      z-index: 50;
+    }
   }
 }
 
