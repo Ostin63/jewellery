@@ -19,10 +19,6 @@
     padding: 0;
   }
 
-  @media (max-width: $tablet-width) {
-    padding: 19px 0 21px;
-  }
-
   &--active-menu {
     @media (max-width: $desktop-width) {
       position: relative;
@@ -30,7 +26,7 @@
       z-index: 1000;
 
       .header__wrapper-top {
-        padding-bottom: 100px;
+        padding: 19px 15px 100px;
         z-index: 100;
         background: $brown;
       }
@@ -60,7 +56,7 @@
   }
 
   @media (max-width: $tablet-width) {
-    padding: 0 15px;
+    padding: 20px 15px;
   }
 }
 
@@ -346,7 +342,7 @@
     z-index: 250;
 
     @media (max-width: $tablet-width) {
-      top: 108px;
+      top: 126px;
       left: 15px;
       width: calc(100% - 2 * 15px);
     }
