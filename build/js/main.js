@@ -11,6 +11,7 @@
   var headerLogo = header.querySelector('.header__logo');
   var headerCart = header.querySelector('.header__cart-block');
   var headerNav = header.querySelector('.header__nav');
+  var headerWrapperNav = header.querySelector('.header__wrapper-nav');
   var noveltySlider = body.querySelector('.novelty__container');
   var faqList = body.querySelector('.faq__list');
   var filterForm = body.querySelector('.filter__form');
@@ -89,6 +90,13 @@
     headerLogo.classList.toggle('header__logo--active-menu');
     headerCart.classList.toggle('header__cart-block--active-menu');
     headerNav.classList.toggle('header__nav--active-menu');
+    headerNav.classList.add('header__nav--js');
+    headerWrapperNav.classList.add('header__wrapper-nav--js');
+  }
+
+  function onToggleMenuPage() {
+    onToggleMenu();
+    page.classList.toggle('page--active');
   }
 
   if (noveltySlider) {
@@ -230,7 +238,7 @@
   }
 
   document.addEventListener('keydown', onTabPressFilter);
-  buttonMenu.addEventListener('click', onToggleMenu);
+  buttonMenu.addEventListener('click', onToggleMenuPage);
   document.addEventListener('keydown', onTabPress);
   headerLogin.addEventListener('click', onModalAdd);
   bottomLogin.addEventListener('click', onModalAddButton);
