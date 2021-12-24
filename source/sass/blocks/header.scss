@@ -372,11 +372,11 @@
 
 .header__nav--active-menu {
   @media (max-width: $desktop-width) {
-    position: absolute;
+    // position: absolute;
     max-width: 100%;
     width: 100%;
-    top: 122px;
-    left: 0;
+    // top: 122px;
+    // left: 0;
     padding: 96px 0 55px 45px;
     display: block;
     background: $brown;
@@ -384,7 +384,7 @@
 
     @media (max-width: $tablet-width) {
       padding: 89px 0 25px 15px;
-      top: 87px;
+      // top: 87px;
     }
 
     .header__menu-list {
