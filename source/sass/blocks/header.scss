@@ -26,6 +26,10 @@
   &--active-menu {
     @media (max-width: $desktop-width) {
       background: $brown;
+
+      .header__wrapper-top {
+        z-index: 150;
+      }
     }
   }
 
@@ -45,7 +49,7 @@
   padding: 0 15px 19px;
   display: flex;
   justify-content: space-between;
-  z-index: 150;
+  // z-index: 150;
 
   @media (max-width: $desktop-width) {
     padding: 0 45px;
