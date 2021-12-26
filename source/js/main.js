@@ -48,6 +48,7 @@
     evt.preventDefault();
     modal.classList.remove('login--deactive');
     page.classList.add('page--active');
+    page.classList.remove('page--active-menu');
     if (storage) {
       mailfield.value = storage;
       passwordfield.focus();
@@ -96,7 +97,8 @@
 
   function onToggleMenuPage() {
     onToggleMenu();
-    page.classList.toggle('page--active');
+    page.classList.toggle('page--active-menu');
+    page.classList.remove('page--active');
   }
 
   if (noveltySlider) {
@@ -191,12 +193,12 @@
   function onAddFilter(evt) {
     evt.preventDefault();
     formFilter.classList.add('filter--active');
-    page.classList.add('page--active');
+    page.classList.add('page--active-menu');
   }
 
   function onRemoveFilter() {
     formFilter.classList.remove('filter--active');
-    page.classList.remove('page--active');
+    page.classList.remove('page--active-menu');
   }
 
   function onTabPressFilter(evt) {
@@ -210,6 +212,7 @@
     evt.preventDefault();
     modal.classList.remove('login--deactive');
     page.classList.add('page--active');
+    page.classList.remove('page--active-menu');
 
     onToggleMenu();
     if (storage) {
